@@ -16,5 +16,7 @@ if (empty($path)) {
     throw new \Exception('Please set your environment by symlinking your local environment under config to config/current_env');
 }
 if (file_exists($path)) {
-    $conf = Assoc::merge($conf, require_once $path);
+    $conf = array_merge($conf, require_once $path);
 }
+
+return $conf;
