@@ -4,6 +4,8 @@
  */
 namespace HAPI;
 
+use HPS\Dao\Base as DaoBase, HPS\Service\Base as ServiceBase;
+
 class Api
 {
     /**
@@ -12,9 +14,12 @@ class Api
      */
     public function getFoo()
     {
+        $dao = new DaoBase();
+
         return json_encode([
             'message' => 'bar',
-            'type' => 'get'
+            'type' => 'get',
+            'dao:bar' => $dao->bar()
         ]);
 
     }
@@ -25,9 +30,12 @@ class Api
      */
     public function postFoo()
     {
+        $service = new ServiceBase();
+
         return json_encode([
             'message' => 'bar',
-            'type' => 'get'
+            'type' => 'get',
+            'service:bar' => $service->bar()
         ]);
 
     }

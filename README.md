@@ -21,3 +21,7 @@ hip shared v2 with namespace support (alpha)
         RewriteRule ^ index.php [QSA,L]
 </Directory>
 ```
+
+Then you can access from here:
+
+http://hps.localhost/api/foo
